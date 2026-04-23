@@ -1,486 +1,436 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bromo-Bali Trip 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>Bromo × Bali Trip 2026</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',system-ui,sans-serif;background:#09090b;color:#fafafa;line-height:1.6;overflow-x:hidden}
-::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:#09090b}::-webkit-scrollbar-thumb{background:#27272a;border-radius:3px}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,sans-serif;background:#F8FAFC;color:#0F172A;line-height:1.6;font-size:16px}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+.section-title{font-size:28px;font-weight:700;margin-bottom:32px;color:#0F172A}
+.section-title span{color:#14B8A6}
 
-/* Glass base */
-.glass{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:20px}
-.glass-sm{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-radius:14px}
-.glass:hover{border-color:rgba(255,255,255,.1);box-shadow:0 0 40px rgba(139,92,246,.03)}
+/* Nav dots */
+.nav-dots{position:fixed;right:24px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;z-index:100}
+.nav-dots a{width:12px;height:12px;border-radius:9999px;background:#E2E8F0;transition:all .3s}
+.nav-dots a.active{background:#14B8A6;transform:scale(1.3)}
+@media(max-width:768px){.nav-dots{display:none}}
+
+/* Glass card */
+.glass{background:rgba(255,255,255,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid #F1F5F9;border-radius:24px;padding:24px;transition:box-shadow .3s}
+.glass:hover{box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.gradient-shell{padding:1px;border-radius:24px;background:linear-gradient(to right bottom,rgba(255,255,255,.4),rgba(255,255,255,.1),rgba(0,0,0,0))}
+.gradient-shell>.glass{border:none}
 
 /* Hero */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:40px 20px}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(139,92,246,.12),transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(236,72,153,.08),transparent 50%);pointer-events:none}
-.hero-orb{position:absolute;width:400px;height:400px;border-radius:50%;filter:blur(120px);opacity:.15;pointer-events:none}
-.hero-orb.orb1{background:#8b5cf6;top:-100px;left:-100px}
-.hero-orb.orb2{background:#ec4899;bottom:-100px;right:-100px}
-.hero-content{position:relative;z-index:1}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;border-radius:50px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:.8rem;color:#a1a1aa;margin-bottom:32px;letter-spacing:.5px}
-.hero-tag .dot{width:6px;height:6px;border-radius:50%;background:#22c55e;animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
-.hero h1 .gradient{background:linear-gradient(135deg,#c084fc,#818cf8,#f472b6,#fb923c);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:flow 8s ease infinite}
-@keyframes flow{0%{background-position:0 50%}50%{background-position:100 50%}100%{background-position:0 50%}}
-.hero-sub{font-size:1.1rem;color:#71717a;max-width:500px;margin:0 auto 32px}
-.hero-meta{display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
-.hero-meta span{font-size:.85rem;color:#a1a1aa;display:flex;align-items:center;gap:6px}
+.hero{background:linear-gradient(135deg,#F0FDFA,#F8FAFC,#EFF6FF);padding:120px 0 80px;text-align:center}
+.hero .pill{display:inline-block;background:#FDF2F8;color:#DB2777;font-size:14px;font-weight:600;padding:6px 16px;border-radius:9999px;margin-bottom:24px}
+.hero h1{font-size:48px;font-weight:800;background:linear-gradient(135deg,#14B8A6,#0D9488,#DB2777);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:16px}
+.hero p{color:#64748B;font-size:18px;margin-bottom:32px}
+.stats{display:flex;justify-content:center;gap:32px;flex-wrap:wrap}
+.stat{text-align:center}
+.stat .num{font-size:32px;font-weight:700;color:#0F172A}
+.stat .label{font-size:13px;color:#94A3B8;margin-top:4px}
 
-.container{max-width:1000px;margin:0 auto;padding:0 20px}
-.section{margin:80px 0}
-.section-header{text-align:center;margin-bottom:48px}
-.section-header h2{font-size:2rem;font-weight:700;margin-bottom:8px}
-.section-header h2 .g{background:linear-gradient(90deg,#c084fc,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.section-header p{color:#71717a;font-size:.95rem}
+/* Grid */
+.grid-auto{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:768px){.grid-3{grid-template-columns:1fr}}
 
 /* Temp cards */
-.temp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
-.temp-card{padding:20px;text-align:center;transition:all .3s}
-.temp-card:hover{transform:translateY(-2px)}
-.temp-card .loc{font-weight:600;font-size:.9rem;margin-bottom:10px;color:#e4e4e7}
-.temp-card .temps{display:flex;justify-content:center;gap:20px}
-.temp-card .t-block .val{font-size:1.4rem;font-weight:700}
-.temp-card .t-block .lbl{font-size:.65rem;color:#52525b;text-transform:uppercase;letter-spacing:1px}
-.temp-card .t-day{color:#fbbf24}
-.temp-card .t-night{color:#60a5fa}
-.temp-card .t-cold{color:#f87171}
+.temp-card{text-align:center;padding:20px}
+.temp-card .loc{font-weight:600;margin-bottom:8px;font-size:15px}
+.temp-card .temp{display:flex;justify-content:center;gap:16px;font-size:14px}
+.temp-card .day-t{color:#0F172A}
+.temp-card .night-t{color:#94A3B8}
+.temp-card.cold{border-left:3px solid #3B82F6}
+.temp-card .cold-label{font-size:11px;color:#3B82F6;font-weight:600;margin-top:6px}
 
-/* Flights */
-.flights-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
-.flight-card{padding:24px}
-.flight-card h3{font-size:.85rem;font-weight:500;color:#71717a;margin-bottom:16px;text-transform:uppercase;letter-spacing:1px}
-.flight-row{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04)}
-.flight-row:last-child{border:none}
-.f-code{padding:4px 10px;border-radius:8px;font-size:.75rem;font-weight:700;letter-spacing:.5px}
-.f-code.airasia{background:rgba(239,68,68,.15);color:#f87171;border:1px solid rgba(239,68,68,.2)}
-.f-code.other{background:rgba(139,92,246,.15);color:#c084fc;border:1px solid rgba(139,92,246,.2)}
-.f-route{flex:1;font-size:.95rem}
-.f-route .code{font-weight:600}
-.f-route .arrow{color:#3f3f46;margin:0 8px}
-.f-time{text-align:right;font-size:.85rem;color:#71717a}
-.f-time .t{color:#e4e4e7;font-weight:500}
+/* Flight cards */
+.flight-card{padding:20px}
+.flight-card .route{font-weight:700;font-size:15px;margin-bottom:4px}
+.flight-card .date{color:#94A3B8;font-size:13px;margin-bottom:12px}
+.flight-leg{display:flex;align-items:center;gap:8px;padding:8px 0;font-size:13px;border-top:1px solid #F1F5F9}
+.flight-leg .code{font-weight:700;color:#14B8A6;min-width:60px}
+.flight-leg .time{color:#64748B}
 
-/* Day cards */
-.day-card{padding:0;overflow:hidden;margin-bottom:32px;transition:all .4s}
-.day-card:hover{border-color:rgba(255,255,255,.1)}
-.day-hero-img{width:100%;height:240px;object-fit:cover;display:block}
-.day-body{padding:28px}
-.day-header{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
-.day-badge{padding:4px 12px;border-radius:50px;font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-.day-badge.java{background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.15)}
-.day-badge.bali{background:rgba(34,197,94,.1);color:#4ade80;border:1px solid rgba(34,197,94,.15)}
-.day-badge.travel{background:rgba(139,92,246,.1);color:#c084fc;border:1px solid rgba(139,92,246,.15)}
-.day-badge.hard{background:rgba(251,146,60,.1);color:#fb923c;border:1px solid rgba(251,146,60,.15)}
-.day-title{font-size:1.25rem;font-weight:700}
-.day-date{font-size:.85rem;color:#71717a;margin-bottom:16px}
-.day-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
-.day-meta span{font-size:.75rem;padding:4px 12px;border-radius:8px;background:rgba(255,255,255,.04);color:#a1a1aa;border:1px solid rgba(255,255,255,.04)}
+/* Itinerary */
+.itin-day{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px}
+@media(max-width:768px){.itin-day{grid-template-columns:1fr}}
+.itin-left{display:flex;flex-direction:column;justify-content:center}
+.day-badge{display:inline-block;font-size:12px;font-weight:600;padding:4px 10px;border-radius:6px;margin-bottom:8px}
+.day-badge.warn{background:#FEF3C7;color:#D97706}
+.day-badge.hot{background:#FEE2E2;color:#DC2626}
+.itin-left h3{font-size:20px;font-weight:700;margin-bottom:4px}
+.itin-left .date-label{color:#94A3B8;font-size:13px;margin-bottom:12px}
+.itin-left .schedule{font-size:14px;color:#475569;line-height:1.8}
+.itin-right{display:flex;flex-direction:column;gap:16px}
+.itin-right img{width:100%;height:200px;object-fit:cover;border-radius:16px}
+.itin-right iframe{width:100%;height:200px;border:none;border-radius:16px}
 
-/* Map */
-.map-wrap{border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.06);margin-bottom:20px}
-.map-wrap iframe{width:100%;height:200px;border:none;filter:invert(.9) hue-rotate(180deg) brightness(.8) contrast(1.1)}
+/* Checklist */
+.check-card h3{font-size:16px;font-weight:700;margin-bottom:12px}
+.check-item{display:flex;align-items:center;gap:8px;padding:6px 0;cursor:pointer;font-size:14px;color:#475569;transition:opacity .2s}
+.check-item.struck{opacity:.4;text-decoration:line-through}
+.check-box{width:20px;height:20px;border-radius:6px;border:2px solid #E2E8F0;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s;font-size:12px}
+.check-item.struck .check-box{background:#14B8A6;border-color:#14B8A6;color:#fff}
 
-/* Timeline */
-.tl{margin-top:16px}
-.tl-item{display:flex;gap:16px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.03);align-items:flex-start}
-.tl-item:last-child{border:none}
-.tl-time{font-size:.85rem;font-weight:600;color:#c084fc;min-width:52px;padding-top:1px;font-variant-numeric:tabular-nums}
-.tl-content{flex:1}
-.tl-desc{font-size:.9rem;color:#d4d4d8}
-.tl-desc .hl{color:#fbbf24;font-weight:600}
-.tl-wear{font-size:.8rem;color:#52525b;margin-top:2px}
-
-.day-note{margin-top:16px;padding:14px 18px;background:rgba(251,146,60,.05);border:1px solid rgba(251,146,60,.1);border-radius:12px;font-size:.85rem;color:#a1a1aa}
-.day-note strong{color:#fb923c}
-
-/* Packing */
-.pack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
-.pack-card{padding:20px}
-.pack-card h4{font-size:.9rem;font-weight:600;color:#c084fc;margin-bottom:14px}
-.pack-item{display:flex;align-items:center;gap:10px;padding:6px 0;font-size:.85rem;cursor:pointer;user-select:none;transition:all .2s}
-.pack-item:hover{color:#e4e4e7}
-.pack-check{width:20px;height:20px;border:2px solid rgba(255,255,255,.1);border-radius:6px;flex-shrink:0;transition:all .2s;display:flex;align-items:center;justify-content:center}
-.pack-check.checked{background:linear-gradient(135deg,#8b5cf6,#ec4899);border-color:transparent}
-.pack-check.checked::after{content:'✓';font-size:.7rem;color:#fff}
-.pack-item.struck{opacity:.35}
-.pack-item.struck .text{text-decoration:line-through}
-
-/* Critical & Safety */
-.alert-box{padding:20px 24px;border-radius:16px;margin-top:24px}
-.alert-box.warn{background:rgba(251,146,60,.05);border:1px solid rgba(251,146,60,.12)}
-.alert-box.danger{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.12)}
-.alert-box h4{font-size:.95rem;font-weight:600;margin-bottom:10px}
-.alert-box.warn h4{color:#fb923c}
-.alert-box.danger h4{color:#f87171}
-.alert-box ol,.alert-box ul{padding-left:20px}
-.alert-box li{padding:3px 0;font-size:.85rem;color:#a1a1aa}
-.alert-box li strong{color:#d4d4d8}
-
-/* Tips */
-.tips-box{padding:20px 24px;border-radius:16px;background:rgba(139,92,246,.05);border:1px solid rgba(139,92,246,.1);margin-top:24px}
-.tips-box h4{font-size:.95rem;font-weight:600;color:#a78bfa;margin-bottom:10px}
-.tips-box li{padding:3px 0;font-size:.85rem;color:#a1a1aa}
+/* Reminder cards */
+.reminder-card{padding:24px;border-radius:24px;margin-bottom:16px}
+.reminder-card.yellow{background:#FFFBEB;border:1px solid #FDE68A}
+.reminder-card.red-border{background:rgba(255,255,255,.8);border:2px solid #FCA5A5}
+.reminder-card.teal-border{background:rgba(255,255,255,.8);border:2px solid #5EEAD4}
+.reminder-card h3{font-size:16px;font-weight:700;margin-bottom:12px}
+.reminder-card ul{list-style:none;font-size:14px;color:#475569}
+.reminder-card li{padding:4px 0;padding-left:20px;position:relative}
+.reminder-card li::before{content:"•";position:absolute;left:0;font-weight:700}
+.reminder-card.red-border li::before{color:#DC2626}
+.reminder-card.teal-border li::before{color:#14B8A6}
+.reminder-card.yellow li::before{color:#D97706}
+.reminder-card .num{font-weight:700;color:#D97706}
 
 /* Footer */
-.footer{text-align:center;padding:60px 20px;color:#27272a;font-size:.8rem}
-
-@media(max-width:640px){
-.day-hero-img{height:160px}
-.flights-grid{grid-template-columns:1fr}
-.temp-grid{grid-template-columns:1fr 1fr}
-.pack-grid{grid-template-columns:1fr}
-.hero h1{font-size:2.2rem}
-}
+footer{text-align:center;padding:48px 24px;color:#94A3B8;font-size:14px}
+footer span{color:#DB2777}
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-orb orb1"></div>
-  <div class="hero-orb orb2"></div>
-  <div class="hero-content">
-    <div class="hero-tag"><span class="dot"></span>May 2026 · 9 Days</div>
-    <h1><span class="gradient">Bromo × Bali</span></h1>
-    <p class="hero-sub">East Java volcanoes, waterfalls & Bali island vibes</p>
-    <div class="hero-meta">
-      <span>✈️ 5 Flights</span>
-      <span>🌋 2 Volcanoes</span>
-      <span>💧 3 Waterfalls</span>
-      <span>🏝️ 2 Islands</span>
-    </div>
-  </div>
-</section>
+<!-- Nav dots -->
+<nav class="nav-dots">
+<a href="#hero" class="active"></a>
+<a href="#temp"></a>
+<a href="#flights"></a>
+<a href="#itin"></a>
+<a href="#packing"></a>
+<a href="#reminders"></a>
+</nav>
 
+<!-- Hero -->
+<section class="hero" id="hero">
 <div class="container">
-
-<!-- TEMPS -->
-<section class="section" id="weather">
-  <div class="section-header"><h2>🌡️ <span class="g">Weather</span></h2><p>อุณหภูมิตามพื้นที่ · พฤษภาคม = ฤดูแล้ง</p></div>
-  <div class="temp-grid">
-    <div class="glass-sm temp-card"><div class="loc">🏙️ สุราบายา / มาลัง</div><div class="temps"><div class="t-block"><div class="lbl">กลางวัน</div><div class="val t-day">28-32°</div></div><div class="t-block"><div class="lbl">กลางคืน</div><div class="val t-night">22-25°</div></div></div></div>
-    <div class="glass-sm temp-card"><div class="loc">💧 Tumpak Sewu</div><div class="temps"><div class="t-block"><div class="lbl">กลางวัน</div><div class="val t-day">25-30°</div></div><div class="t-block"><div class="lbl">กลางคืน</div><div class="val t-night">20-23°</div></div></div></div>
-    <div class="glass-sm temp-card"><div class="loc">🌋 Ijen Summit</div><div class="temps"><div class="t-block"><div class="lbl">กลางวัน</div><div class="val">15-20°</div></div><div class="t-block"><div class="lbl">เที่ยงคืน</div><div class="val t-cold">5-10°</div></div></div></div>
-    <div class="glass-sm temp-card"><div class="loc">🌄 Bromo</div><div class="temps"><div class="t-block"><div class="lbl">กลางวัน</div><div class="val">15-20°</div></div><div class="t-block"><div class="lbl">เที่ยงคืน</div><div class="val t-cold">5-10°</div></div></div></div>
-    <div class="glass-sm temp-card"><div class="loc">🏝️ Bali</div><div class="temps"><div class="t-block"><div class="lbl">กลางวัน</div><div class="val t-day">28-32°</div></div><div class="t-block"><div class="lbl">กลางคืน</div><div class="val t-night">24-26°</div></div></div></div>
-  </div>
+<div class="pill">✈️ Travel Planner</div>
+<h1>Bromo × Bali</h1>
+<p>East Java volcanoes & Bali island vibes — 9 days of adventure</p>
+<div class="stats">
+<div class="stat"><div class="num">9</div><div class="label">Days</div></div>
+<div class="stat"><div class="num">3</div><div class="label">Flights</div></div>
+<div class="stat"><div class="num">5</div><div class="label">Hotels</div></div>
+<div class="stat"><div class="num">2</div><div class="label">Islands</div></div>
+</div>
+</div>
 </section>
 
-<!-- FLIGHTS -->
-<section class="section" id="flights">
-  <div class="section-header"><h2>✈️ <span class="g">Flights</span></h2><p>5 เที่ยวบิน · 2 airlines</p></div>
-  <div class="flights-grid">
-    <div class="glass flight-card">
-      <h3>🛫 Departure · 1 May</h3>
-      <div class="flight-row"><span class="f-code airasia">AK 899</span><span class="f-route"><span class="code">DMK</span><span class="arrow">→</span><span class="code">KUL</span></span><span class="f-time"><span class="t">11:40</span> – 14:55</span></div>
-      <div class="flight-row"><span class="f-code airasia">QZ 325</span><span class="f-route"><span class="code">KUL</span><span class="arrow">→</span><span class="code">SUB</span></span><span class="f-time"><span class="t">17:40</span> – 19:20</span></div>
-    </div>
-    <div class="glass flight-card">
-      <h3>🏝️ Island Transfer · 6 May</h3>
-      <div class="flight-row"><span class="f-code other">IU 706</span><span class="f-route"><span class="code">SUB</span><span class="arrow">→</span><span class="code">DPS</span></span><span class="f-time"><span class="t">14:00</span> – 16:00</span></div>
-    </div>
-    <div class="glass flight-card">
-      <h3>🛬 Return · 9 May</h3>
-      <div class="flight-row"><span class="f-code airasia">AK 371</span><span class="f-route"><span class="code">DPS</span><span class="arrow">→</span><span class="code">KUL</span></span><span class="f-time"><span class="t">11:40</span> – 14:45</span></div>
-      <div class="flight-row"><span class="f-code airasia">AK 892</span><span class="f-route"><span class="code">KUL</span><span class="arrow">→</span><span class="code">DMK</span></span><span class="f-time"><span class="t">17:00</span> – 18:10</span></div>
-    </div>
-  </div>
+<!-- Temperature Guide -->
+<section id="temp">
+<div class="container">
+<h2 class="section-title">🌡️ <span>Temperature</span> Guide</h2>
+<div class="grid-auto">
+<div class="glass temp-card"><div class="loc">สุราบายา / มาลัง</div><div class="temp"><span class="day-t">🌞 28-32°C</span><span class="night-t">🌙 22-25°C</span></div></div>
+<div class="glass temp-card"><div class="loc">Tumpak Sewu</div><div class="temp"><span class="day-t">🌞 25-30°C</span><span class="night-t">🌙 20-23°C</span></div></div>
+<div class="glass temp-card cold"><div class="loc">Ijen Summit</div><div class="temp"><span class="day-t">🌞 15-20°C</span><span class="night-t">🌙 5-10°C</span></div><div class="cold-label">🥶 COLD</div></div>
+<div class="glass temp-card cold"><div class="loc">Bromo</div><div class="temp"><span class="day-t">🌞 15-20°C</span><span class="night-t">🌙 5-10°C</span></div><div class="cold-label">🥶 COLD</div></div>
+<div class="glass temp-card"><div class="loc">Bali</div><div class="temp"><span class="day-t">🌞 28-32°C</span><span class="night-t">🌙 24-26°C</span></div></div>
+</div>
+</div>
 </section>
 
-<!-- DAYS -->
-<section class="section" id="itinerary">
-  <div class="section-header"><h2>📅 <span class="g">Itinerary</span></h2><p>9 วัน · Java → Bali</p></div>
-
-  <!-- Day 1 -->
-  <div class="glass day-card">
-    <img class="day-hero-img" src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&q=80" alt="Surabaya" loading="lazy">
-    <div class="day-body">
-      <div class="day-header"><span class="day-badge travel">✈️ Travel</span><span class="day-title">Arrival Surabaya</span></div>
-      <div class="day-date">Friday · 1 May</div>
-      <div class="day-meta"><span>🌡 28°C</span><span>🏨 Surabaya City</span><span>✈️ Land 19:20</span></div>
-      <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=112.6,−7.35,112.9,−7.2&layer=mapnik&marker=−7.2575,112.7521"></iframe></div>
-      <div class="tl">
-        <div class="tl-item"><span class="tl-time">19:20</span><span class="tl-content"><div class="tl-desc">Land at Juanda Airport (SUB)</div></span></div>
-        <div class="tl-item"><span class="tl-time">20:30</span><span class="tl-content"><div class="tl-desc">Private car → Surabaya (~45 min)</div></span></div>
-        <div class="tl-item"><span class="tl-time">21:15</span><span class="tl-content"><div class="tl-desc">Check-in hotel</div></span></div>
-        <div class="tl-item"><span class="tl-time">21:45</span><span class="tl-content"><div class="tl-desc">Late dinner near hotel</div></span></div>
-      </div>
-      <div class="day-note">⚡ <strong>Prep คืนนี้:</strong> ชาร์จอุปกรณ์, ตั้ง alarm 3 ชุด (Day 4 & 5 ตื่นเที่ยงคืน)</div>
-    </div>
-  </div>
-
-  <!-- Day 2 -->
-  <div class="glass day-card">
-    <img class="day-hero-img" src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800&q=80" alt="Malang" loading="lazy">
-    <div class="day-body">
-      <div class="day-header"><span class="day-badge java">🌋 Java</span><span class="day-title">Surabaya → Malang → Tumpak Sewu</span></div>
-      <div class="day-date">Saturday · 2 May</div>
-      <div class="day-meta"><span>🌡 28-30°C</span><span>🚗 ~3h drive</span><span>🏨 Tumpak Sewu</span></div>
-      <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=112.3,−8.3,112.9,−7.85&layer=mapnik&marker=−7.983,112.6308&marker=−8.217,112.6914"></iframe></div>
-      <div class="tl">
-        <div class="tl-item"><span class="tl-time">07:00</span><span class="tl-content"><div class="tl-desc">Wake up + hotel breakfast</div></span></div>
-        <div class="tl-item"><span class="tl-time">09:00</span><span class="tl-content"><div class="tl-desc">Depart Surabaya</div></span></div>
-        <div class="tl-item"><span class="tl-time">10:30</span><span class="tl-content"><div class="tl-desc"><span class="hl">🎨 Jodipan Colorful Village</span></div><div class="tl-wear">Bright clothes, hat, sunscreen</div></span></div>
-        <div class="tl-item"><span class="tl-time">12:00</span><span class="tl-content"><div class="tl-desc">Lunch in Malang</div></span></div>
-        <div class="tl-item"><span class="tl-time">16:00</span><span class="tl-content"><div class="tl-desc">Check-in Tumpak Sewu Hotel</div></span></div>
-        <div class="tl-item"><span class="tl-time">19:30</span><span class="tl-content"><div class="tl-desc">Early sleep</div></span></div>
-      </div>
-      <div class="day-note">⚡ ตั้ง alarm 05:30 · เติมน้ำ · ชาร์จ power bank</div>
-    </div>
-  </div>
-
-  <!-- Day 3 -->
-  <div class="glass day-card">
-    <img class="day-hero-img" src="https://images.unsplash.com/photo-1702590636678-bfb827ef8e7d?w=800&q=80" alt="Tumpak Sewu" loading="lazy">
-    <div class="day-body">
-      <div class="day-header"><span class="day-badge java">🌋 Java</span><span class="day-badge hard">⚠️ Sleep Early</span><span class="day-title">Tumpak Sewu → Bondowoso</span></div>
-      <div class="day-date">Sunday · 3 May</div>
-      <div class="day-meta"><span>🌡 25-30°C</span><span>🥾 Hike 3km</span><span>🚗 5-6h drive</span><span>🏨 Ijen Hotel</span></div>
-      <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=112.4,−8.3,114.5,−7.8&layer=mapnik&marker=−8.217,112.6914&marker=−7.95,114.2"></iframe></div>
-      <div class="tl">
-        <div class="tl-item"><span class="tl-time">05:30</span><span class="tl-content"><div class="tl-desc">Wake up</div></span></div>
-        <div class="tl-item"><span class="tl-time">06:30</span><span class="tl-content"><div class="tl-desc">Panoramic Viewpoint (500m walk)</div><div class="tl-wear">👟 Hiking shoes, hat</div></span></div>
-        <div class="tl-item"><span class="tl-time">07:00</span><span class="tl-content"><div class="tl-desc">Hike down to waterfall (1.5km)</div><div class="tl-wear">🩱 ชุดเล่นน้ำข้างใน, กระเป๋ากันน้ำ</div></span></div>
-        <div class="tl-item"><span class="tl-time">07:30</span><span class="tl-content"><div class="tl-desc"><span class="hl">💧 Tumpak Sewu Waterfall</span></div></span></div>
-        <div class="tl-item"><span class="tl-time">08:30</span><span class="tl-content"><div class="tl-desc">Hike back + shower</div></span></div>
-        <div class="tl-item"><span class="tl-time">11:00</span><span class="tl-content"><div class="tl-desc">Depart for Bondowoso (5-6h)</div></span></div>
-        <div class="tl-item"><span class="tl-time">17:00</span><span class="tl-content"><div class="tl-desc">Check-in Ijen Hotel</div></span></div>
-      </div>
-      <div class="day-note">⚠️ <strong>วันนี้หนัก</strong> — เดิน + ขับนาน · นอนภายใน 20:00 · Alarm: 23:00, 23:15, 23:30</div>
-    </div>
-  </div>
-
-  <!-- Day 4 -->
-  <div class="glass day-card">
-    <img class="day-hero-img" src="https://images.unsplash.com/photo-1588668214407-8f46b82e1c7d?w=800&q=80" alt="Ijen" loading="lazy">
-    <div class="day-body">
-      <div class="day-header"><span class="day-badge java">🌋 Java</span><span class="day-badge hard">🔥 Hardest</span><span class="day-title">Ijen Blue Fire → Bromo</span></div>
-      <div class="day-date">Monday · 4 May</div>
-      <div class="day-meta"><span>🌡 5-10°C 🔵</span><span>🥾 Hike 8km</span><span>🚗 4-5h drive</span><span>🏨 Bromo</span></div>
-      <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=113.8,−8.2,114.6,−7.8&layer=mapnik&marker=−8.0584,114.242&marker=−7.9425,112.953"></iframe></div>
-      <div class="tl">
-        <div class="tl-item"><span class="tl-time">23:30</span><span class="tl-content"><div class="tl-desc">Wake up (previous night)</div></span></div>
-        <div class="tl-item"><span class="tl-time">00:00</span><span class="tl-content"><div class="tl-desc">Drive to Paltuding (2h)</div><div class="tl-wear">🧥 เสื้อกันหนาว, fleece, beanie, ถุงมือ</div></span></div>
-        <div class="tl-item"><span class="tl-time">02:00</span><span class="tl-content"><div class="tl-desc">Hike Ijen (4km)</div><div class="tl-wear">🔦 ไฟฉาย, hiking shoes, buff</div></span></div>
-        <div class="tl-item"><span class="tl-time">04:00</span><span class="tl-content"><div class="tl-desc"><span class="hl">🔵 Blue Fire</span></div></span></div>
-        <div class="tl-item"><span class="tl-time">05:00</span><span class="tl-content"><div class="tl-desc"><span class="hl">🌅 Sunrise + Crater Lake</span></div></span></div>
-        <div class="tl-item"><span class="tl-time">08:00</span><span class="tl-content"><div class="tl-desc">Drive back to hotel</div></span></div>
-        <div class="tl-item"><span class="tl-time">12:30</span><span class="tl-content"><div class="tl-desc">Depart for Bromo (4-5h)</div></span></div>
-        <div class="tl-item"><span class="tl-time">17:00</span><span class="tl-content"><div class="tl-desc">Check-in Bromo Hotel</div></span></div>
-      </div>
-      <div class="day-note">🌡 <strong>Summit: 5-10°C + wind</strong> · Down jacket · Gas mask · Alarm: 01:00, 01:15, 01:30</div>
-    </div>
-  </div>
-
-  <!-- Day 5 -->
-  <div class="glass day-card">
-    <img class="day-hero-img" src="https://images.unsplash.com/photo-1588668214407-8f46b82e1c7d?w=800&q=80" alt="Bromo" loading="lazy">
-    <div class="day-body">
-      <div class="day-header"><span class="day-badge java">🌋 Java</span><span class="day-title">Bromo Sunrise → Madakaripura</span></div>
-      <div class="day-date">Tuesday · 5 May</div>
-      <div class="day-meta"><span>🌡 5°C → 28°C</span><span>🚙 Jeep</span><span>💧 Waterfall</span><span>🏨 Surabaya</span></div>
-      <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=112.6,−7.7,113.0,−7.6&layer=mapnik&marker=−7.9425,112.953&marker=−7.615,112.88"></iframe></div>
-      <div class="tl">
-        <div class="tl-item"><span class="tl-time">01:30</span><span class="tl-content"><div class="tl-desc">Wake up</div></span></div>
-        <div class="tl-item"><span class="tl-time">02:00</span><span class="tl-content"><div class="tl-desc">Jeep → King Kong Hill</div><div class="tl-wear">🧥 กันหนาว, beanie, ถุงมือ</div></span></div>
-        <div class="tl-item"><span class="tl-time">05:00</span><span class="tl-content"><div class="tl-desc"><span class="hl">🌅 Bromo Sunrise</span></div></span></div>
-        <div class="tl-item"><span class="tl-time">08:00</span><span class="tl-content"><div class="tl-desc">Horse/walk to crater rim</div><div class="tl-wear">😷 Dust mask, sunglasses</div></span></div>
-        <div class="tl-item"><span class="tl-time">12:00</span><span class="tl-content"><div class="tl-desc">Drive → Madakaripura</div><div class="tl-wear">🩱 ชุดเล่นน้ำ, กระเป๋ากันน้ำ</div></span></div>
-        <div class="tl-item"><span class="tl-time">13:00</span><span class="tl-content"><div class="tl-desc"><span class="hl">💧 Madakaripura Waterfall</span></div></span></div>
-        <div class="tl-item"><span class="tl-time">18:00</span><span class="tl-content"><div class="tl-desc">Arrive Surabaya — <strong>Java trip done</strong></div></span></div>
-      </div>
-      <div class="day-note">⚠️ <strong>Madakaripura เปียกแน่นอน</strong> — เสื้อเปลี่ยน + ถุงกันน้ำ</div>
-    </div>
-  </div>
-
-  <!-- Day 6 -->
-  <div class="glass day-card">
-    <img class="day-hero-img" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80" alt="Bali" loading="lazy">
-    <div class="day-body">
-      <div class="day-header"><span class="day-badge bali">🏝️ Bali</span><span class="day-badge travel">✈️ Flight</span><span class="day-title">Surabaya → Bali</span></div>
-      <div class="day-date">Wednesday · 6 May</div>
-      <div class="day-meta"><span>🌡 28-32°C</span><span>✈️ IU 706 14:00</span><span>🏨 Canggu</span></div>
-      <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=112.6,−8.8,115.3,−7.2&layer=mapnik&marker=−7.2575,112.7521&marker=−8.6705,115.1567"></iframe></div>
-      <div class="tl">
-        <div class="tl-item"><span class="tl-time">07:00</span><span class="tl-content"><div class="tl-desc">Relaxed breakfast</div></span></div>
-        <div class="tl-item"><span class="tl-time">10:00</span><span class="tl-content"><div class="tl-desc">Depart → Juanda Airport</div></span></div>
-        <div class="tl-item"><span class="tl-time">14:00</span><span class="tl-content"><div class="tl-desc"><span class="hl">✈️ IU 706 SUB → DPS</span></div></span></div>
-        <div class="tl-item"><span class="tl-time">17:30</span><span class="tl-content"><div class="tl-desc">Check-in Canggu</div></span></div>
-        <div class="tl-item"><span class="tl-time">18:00</span><span class="tl-content"><div class="tl-desc"><span class="hl">🌅 Canggu/Seminyak Sunset</span></div></span></div>
-        <div class="tl-item"><span class="tl-time">19:00</span><span class="tl-content"><div class="tl-desc">Beach Club (Potato Head / FINNS)</div></span></div>
-      </div>
-      <div class="day-note">🎒 <strong>Transition:</strong> Mountain gear → Beach chill mode</div>
-    </div>
-  </div>
-
-  <!-- Day 7 -->
-  <div class="glass day-card">
-    <img class="day-hero-img" src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80" alt="Tegallalang" loading="lazy">
-    <div class="day-body">
-      <div class="day-header"><span class="day-badge bali">🏝️ Bali</span><span class="day-title">Ubud Day Trip</span></div>
-      <div class="day-date">Thursday · 7 May</div>
-      <div class="day-meta"><span>🌡 28-32°C</span><span>🚗 Private car</span><span>🏨 Canggu</span></div>
-      <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=115.1,−8.65,115.4,−8.4&layer=mapnik&marker=−8.4312,115.2793&marker=−8.583,115.31"></iframe></div>
-      <div class="tl">
-        <div class="tl-item"><span class="tl-time">07:00</span><span class="tl-content"><div class="tl-desc">Depart → Ubud</div></span></div>
-        <div class="tl-item"><span class="tl-time">08:30</span><span class="tl-content"><div class="tl-desc"><span class="hl">🌾 Tegallalang Rice Terrace</span></div><div class="tl-wear">Walking shoes, hat, sunscreen</div></span></div>
-        <div class="tl-item"><span class="tl-time">10:00</span><span class="tl-content"><div class="tl-desc"><span class="hl">💧 Tegenungan Waterfall</span></div><div class="tl-wear">🩱 ชุดเล่นน้ำ, ผ้าเช็ดตัว</div></span></div>
-        <div class="tl-item"><span class="tl-time">12:00</span><span class="tl-content"><div class="tl-desc">Lunch in Ubud</div></span></div>
-        <div class="tl-item"><span class="tl-time">13:30</span><span class="tl-content"><div class="tl-desc">☕ Jungle cafe</div></span></div>
-        <div class="tl-item"><span class="tl-time">18:00</span><span class="tl-content"><div class="tl-desc">💆 Massage / Spa</div></span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Day 8 -->
-  <div class="glass day-card">
-    <img class="day-hero-img" src="https://images.unsplash.com/photo-1568849676085-51415703900f?w=800&q=80" alt="Nusa Penida" loading="lazy">
-    <div class="day-body">
-      <div class="day-header"><span class="day-badge bali">🏝️ Bali</span><span class="day-title">Nusa Penida + Xpark</span></div>
-      <div class="day-date">Friday · 8 May</div>
-      <div class="day-meta"><span>🌡 30°C+ ☀️</span><span>🚢 Fast boat</span><span>🎢 Extreme Park</span></div>
-      <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=115.1,−8.8,115.7,−8.6&layer=mapnik&marker=−8.728,115.262&marker=−8.726,115.531"></iframe></div>
-      <div class="tl">
-        <div class="tl-item"><span class="tl-time">05:30</span><span class="tl-content"><div class="tl-desc">Depart → Sanur Harbour</div></span></div>
-        <div class="tl-item"><span class="tl-time">07:30</span><span class="tl-content"><div class="tl-desc">🚢 Fast boat → Nusa Penida (30-45 min)</div><div class="tl-wear">🤢 ยามะเร็ง</div></span></div>
-        <div class="tl-item"><span class="tl-time">09:30</span><span class="tl-content"><div class="tl-desc"><span class="hl">🎢 Xpark — Bungee / Swing / Cliff</span></div><div class="tl-wear">👟 รองเท้าปิด, เสื้อกีฬา</div></span></div>
-        <div class="tl-item"><span class="tl-time">13:00</span><span class="tl-content"><div class="tl-desc"><span class="hl">🏝️ Kelingking / Broken Beach / Angel's Billabong</span></div><div class="tl-wear">👟 Hiking shoes, 💧 น้ำเยอะ</div></span></div>
-        <div class="tl-item"><span class="tl-time">16:00</span><span class="tl-content"><div class="tl-desc">🚢 Boat back to Sanur</div></span></div>
-        <div class="tl-item"><span class="tl-time">21:00</span><span class="tl-content"><div class="tl-desc">Pack for departure</div></span></div>
-      </div>
-      <div class="day-note">⚠️ <strong>Nusa Penida cliffs อันตราย</strong> — รองเท้าปิดสำคัญ · อย่าเข้าใกล้ขอบหน้าผา</div>
-    </div>
-  </div>
-
-  <!-- Day 9 -->
-  <div class="glass day-card">
-    <img class="day-hero-img" src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800&q=80" alt="Departure" loading="lazy">
-    <div class="day-body">
-      <div class="day-header"><span class="day-badge travel">✈️ Travel</span><span class="day-title">Return to Bangkok</span></div>
-      <div class="day-date">Saturday · 9 May</div>
-      <div class="day-meta"><span>✈️ 2 flights</span><span>🏠 18:10 BKK</span></div>
-      <div class="map-wrap"><iframe src="https://www.openstreetmap.org/export/embed.html?bbox=112.5,−8.8,115.5,−7.0&layer=mapnik&marker=−8.7467,115.1672"></iframe></div>
-      <div class="tl">
-        <div class="tl-item"><span class="tl-time">07:00</span><span class="tl-content"><div class="tl-desc">☕ Brunch near hotel</div></span></div>
-        <div class="tl-item"><span class="tl-time">08:00</span><span class="tl-content"><div class="tl-desc">Check-out → DPS Airport</div></span></div>
-        <div class="tl-item"><span class="tl-time">11:40</span><span class="tl-content"><div class="tl-desc"><span class="hl">✈️ AK 371 DPS → KUL</span></div></span></div>
-        <div class="tl-item"><span class="tl-time">14:45</span><span class="tl-content"><div class="tl-desc">Arrive KLIA2 · Transit 2h15m</div></span></div>
-        <div class="tl-item"><span class="tl-time">17:00</span><span class="tl-content"><div class="tl-desc"><span class="hl">✈️ AK 892 KUL → DMK</span></div></span></div>
-        <div class="tl-item"><span class="tl-time">18:10</span><span class="tl-content"><div class="tl-desc"><span class="hl">🏠 Home sweet home</span></div></span></div>
-      </div>
-    </div>
-  </div>
+<!-- Flights -->
+<section id="flights">
+<div class="container">
+<h2 class="section-title">✈️ <span>Flights</span></h2>
+<div class="grid-3">
+<div class="glass flight-card">
+<div class="route">Bangkok → Surabaya</div>
+<div class="date">May 1 (Going)</div>
+<div class="flight-leg"><span class="code">AK 899</span><span>DMK → KUL</span><span class="time">11:40–14:55</span></div>
+<div class="flight-leg"><span class="code">QZ 325</span><span>KUL → SUB</span><span class="time">17:40–19:20</span></div>
+</div>
+<div class="glass flight-card">
+<div class="route">Surabaya → Bali</div>
+<div class="date">May 6 (Island Hop)</div>
+<div class="flight-leg"><span class="code">IU 706</span><span>SUB → DPS</span><span class="time">14:00–16:00</span></div>
+</div>
+<div class="glass flight-card">
+<div class="route">Bali → Bangkok</div>
+<div class="date">May 9 (Return)</div>
+<div class="flight-leg"><span class="code">AK 371</span><span>DPS → KUL</span><span class="time">11:40–14:45</span></div>
+<div class="flight-leg"><span class="code">AK 892</span><span>KUL → DMK</span><span class="time">17:00–18:10</span></div>
+</div>
+</div>
+</div>
 </section>
 
-<!-- PACKING -->
-<section class="section" id="packing">
-  <div class="section-header"><h2>🎒 <span class="g">Packing</span></h2><p>กดเพื่อเช็ค · ไม่มีบันทึกอัตโนมัติ</p></div>
-  <div class="pack-grid">
-    <div class="glass-sm pack-card">
-      <h4>🧥 เสื้อผ้า</h4>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">🧥 Down jacket (CRITICAL)</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">Fleece / warm hoodie</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">กางเกงยาว ×2</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">กางเกงสั้น ×2</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">เสื้อยืด ×4-5</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">🩱 ชุดเล่นน้ำ ×2</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">ชุดชั้นใน ×7-8</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">ถุงเท้า ×5</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">Rain jacket / poncho</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">🧣 Beanie + Buff</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">🧤 ถุงมือ</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">หมวกแดด</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">🩴 รองเท้าแตะ</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">👟 Hiking shoes (MUST)</span></div>
-    </div>
-    <div class="glass-sm pack-card">
-      <h4>🎒 อุปกรณ์</h4>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">เป้เดินทาง (carry-on)</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">เป้เดินเทือกเล็ก</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">กระเป๋ากันน้ำ / dry bag</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">🔦 ไฟฉาย + ถ่าน (CRITICAL)</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">🔋 Power bank 10,000+ mAh</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">🔌 Universal adapter (Type C/F)</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">📱 Charger + cable</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">📷 กล้อง / GoPro</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">😎 Sunglasses</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">😷 Dust mask ×2</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">ผ้าเช็ดตัว microfiber</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">ขวดน้ำ refill</span></div>
-    </div>
-    <div class="glass-sm pack-card">
-      <h4>💊 สุขภาพ</h4>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">ยาส่วนตัว</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">💊 Paracetamol / Ibuprofen</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">🤢 Imodium / ยาแก้ท้องเสีย</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">Antihistamine</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">🧴 ยากันยุง</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">🧴 ครีมกันแดด SPF50+</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">💄 Lip balm SPF</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">Wet wipes + sanitizer</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">แปรงสีฟัน / ล้างหน้า</span></div>
-    </div>
-    <div class="glass-sm pack-card">
-      <h4>📄 เอกสาร & เงิน</h4>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">📄 Passport (6+ months)</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">✈️ Flight confirmations ×5</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">🏨 Hotel bookings</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">🛡️ Travel insurance</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">💳 Credit/debit cards</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">💵 USD backup + IDR cash</span></div>
-      <div class="pack-item" onclick="toggle(this)"><div class="pack-check"></div><span class="text">📱 Indonesian SIM (สนามบิน SUB)</span></div>
-    </div>
-  </div>
+<!-- Itinerary -->
+<section id="itin">
+<div class="container">
+<h2 class="section-title">📅 <span>9-Day</span> Itinerary</h2>
 
-  <div class="alert-box warn">
-    <h4>⚠️ ห้ามลืมเด็ดขาด</h4>
-    <ol>
-      <li><strong>Down jacket</strong> — Ijen + Bromo กลางคืน 5-10°C + ลม</li>
-      <li><strong>ไฟฉาย + ถ่าน</strong> — เดิน Ijen ตอนกลางคืน มืดสนิท</li>
-      <li><strong>Buff / ผ้าปิดจมูก</strong> — ซัลเฟอร์ Ijen + ฝุ่น Bromo</li>
-      <li><strong>Hiking shoes ปิด</strong> — Ijen, Bromo, Tumpak Sewu, Nusa Penida</li>
-      <li><strong>กระเป๋ากันน้ำ</strong> — Tumpak Sewu + Madakaripura</li>
-    </ol>
-  </div>
-</section>
-
-<!-- SAFETY -->
-<section class="section" id="safety">
-  <div class="section-header"><h2>🚨 <span class="g">Safety</span></h2></div>
-  <div class="alert-box danger">
-    <h4>⚠️ ข้อควรระวัง</h4>
-    <ul>
-      <li><strong>Ijen:</strong> Blue fire area มีก๊าซซัลเฟอร์เป็นพิษ — ทำตาม guide, อย่าอยู่ทางลมจากปล่อง</li>
-      <li><strong>Bromo:</strong> ขอบปล่องไม่มีรั้ว — อยู่ห่างจากขอบ, จับมือถือให้แน่น</li>
-      <li><strong>Nusa Penida:</strong> Kelingking cliff อันตรายตายได้ — ไม่มีรูปไหนสมควรตายด้วย</li>
-      <li><strong>Xpark:</strong> Travel insurance ที่ครอบคลุม adventure sports</li>
-    </ul>
-  </div>
-  <div class="tips-box">
-    <h4>💡 Tips</h4>
-    <ul>
-      <li><strong>ผ้าปิดจมูก:</strong> Ijen กลิ่นซัลเฟอร์แรง — ใช้ buff พัน 2 ชั้น</li>
-      <li><strong>Jeep tour:</strong> Bromo เป็นมาตรฐาน — โรงแรมจะช่วยจัด</li>
-      <li><strong>เรือ Nusa Penida:</strong> จองล่วงหน้า! รอบเช้าเต็มเร็ว</li>
-      <li><strong>Grab/Gojek:</strong> ได้ทุกที่ใน Bali — ถูกกว่าแท็กซี่</li>
-      <li><strong>เงิน:</strong> ถอน ATM ที่สนามบิน SUB — ภูเขาไม่มี ATM</li>
-      <li><strong>SIM:</strong> Telkomsel = coverage ดีสุด</li>
-    </ul>
-  </div>
-</section>
-
+<!-- Day 1 -->
+<div class="itin-day">
+<div class="glass itin-left">
+<h3>Day 1</h3><div class="date-label">Fri May 1 — Surabaya</div>
+<div class="schedule">
+19:20 Arrival SUB → car to hotel → late dinner → sleep
+</div>
+</div>
+<div class="itin-right">
+<img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=600&q=80" alt="Surabaya" loading="lazy">
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=112.7,-7.3,112.8,-7.2&layer=mapnik&marker=-7.2575,112.7521" loading="lazy"></iframe>
+</div>
 </div>
 
-<div class="footer">Made with ❤️ by Anya · Bromo-Bali 2026</div>
+<!-- Day 2 -->
+<div class="itin-day">
+<div class="glass itin-left">
+<h3>Day 2</h3><div class="date-label">Sat May 2 — Jodipan & Malang</div>
+<div class="schedule">
+07:00 Wake → 09:00 Depart → 10:30 Jodipan → 12:00 Lunch Malang → 16:00 Tumpak Sewu hotel
+</div>
+</div>
+<div class="itin-right">
+<img src="https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?w=600&q=80" alt="Jodipan" loading="lazy">
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=112.5,-8.1,112.8,-7.9&layer=mapnik&marker=-7.983,112.631" loading="lazy"></iframe>
+</div>
+</div>
+
+<!-- Day 3 -->
+<div class="itin-day">
+<div class="glass itin-left">
+<h3>Day 3</h3><div class="date-label">Sun May 3 — Tumpak Sewu</div>
+<div class="day-badge warn">⚠️ นอนเร็ว</div>
+<div class="schedule">
+06:30 Viewpoint → 07:00 Hike down waterfall → 08:30 Back → 11:00 Depart → 17:00 Ijen hotel
+</div>
+</div>
+<div class="itin-right">
+<img src="https://images.unsplash.com/photo-1702590636678-bfb827ef8e7d?w=600&q=80" alt="Tumpak Sewu" loading="lazy">
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=112.5,-8.3,112.9,-8.1&layer=mapnik&marker=-8.217,112.691" loading="lazy"></iframe>
+</div>
+</div>
+
+<!-- Day 4 -->
+<div class="itin-day">
+<div class="glass itin-left">
+<h3>Day 4</h3><div class="date-label">Mon May 4 — Ijen Crater</div>
+<div class="day-badge hot">🔥 หนักสุด</div>
+<div class="schedule">
+23:30 Wake → 00:00 Drive → 02:00 Hike Ijen → 04:00 Blue Fire → 05:00 Sunrise → 08:00 Return → 17:00 Bromo hotel
+</div>
+</div>
+<div class="itin-right">
+<img src="https://images.unsplash.com/photo-1588668214407-8f46b82e1c7d?w=600&q=80" alt="Ijen" loading="lazy">
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=114.0,-8.2,114.5,-7.9&layer=mapnik&marker=-8.058,114.242" loading="lazy"></iframe>
+</div>
+</div>
+
+<!-- Day 5 -->
+<div class="itin-day">
+<div class="glass itin-left">
+<h3>Day 5</h3><div class="date-label">Tue May 5 — Bromo & Madakaripura</div>
+<div class="schedule">
+01:30 Wake → 02:00 Jeep → 05:00 Bromo sunrise → 08:30 Crater → 12:00 Madakaripura → 18:00 Surabaya
+</div>
+</div>
+<div class="itin-right">
+<img src="https://images.unsplash.com/photo-1588668214407-8f46b82e1c7d?w=600&q=80" alt="Bromo" loading="lazy">
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=112.7,-8.1,113.2,-7.8&layer=mapnik&marker=-7.943,112.953" loading="lazy"></iframe>
+</div>
+</div>
+
+<!-- Day 6 -->
+<div class="itin-day">
+<div class="glass itin-left">
+<h3>Day 6</h3><div class="date-label">Wed May 6 — Canggu, Bali</div>
+<div class="schedule">
+07:00 Relax → 14:00 Fly SUB→DPS → 17:30 Canggu hotel → 18:00 Sunset → 19:00 Beach club
+</div>
+</div>
+<div class="itin-right">
+<img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Canggu" loading="lazy">
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=115.0,-8.8,115.3,-8.5&layer=mapnik&marker=-8.671,115.157" loading="lazy"></iframe>
+</div>
+</div>
+
+<!-- Day 7 -->
+<div class="itin-day">
+<div class="glass itin-left">
+<h3>Day 7</h3><div class="date-label">Thu May 7 — Ubud</div>
+<div class="schedule">
+07:00 Depart → 08:30 Tegallalang → 10:00 Tegenungan → 12:00 Lunch → 18:00 Spa
+</div>
+</div>
+<div class="itin-right">
+<img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=80" alt="Ubud" loading="lazy">
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=115.1,-8.6,115.5,-8.3&layer=mapnik&marker=-8.431,115.279" loading="lazy"></iframe>
+</div>
+</div>
+
+<!-- Day 8 -->
+<div class="itin-day">
+<div class="glass itin-left">
+<h3>Day 8</h3><div class="date-label">Fri May 8 — Nusa Penida</div>
+<div class="schedule">
+05:30 Depart → 07:30 Boat → 09:30 Xpark bungee → 13:00 Kelingking → 16:00 Boat back
+</div>
+</div>
+<div class="itin-right">
+<img src="https://images.unsplash.com/photo-1568849676085-51415703900f?w=600&q=80" alt="Nusa Penida" loading="lazy">
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=115.3,-8.9,115.8,-8.5&layer=mapnik&marker=-8.726,115.531" loading="lazy"></iframe>
+</div>
+</div>
+
+<!-- Day 9 -->
+<div class="itin-day">
+<div class="glass itin-left">
+<h3>Day 9</h3><div class="date-label">Sat May 9 — Departure</div>
+<div class="schedule">
+07:00 Brunch → 08:30 Airport → 11:40 Fly → 14:45 KUL → 17:00 Fly → 18:10 BKK
+</div>
+</div>
+<div class="itin-right">
+<img src="https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=600&q=80" alt="Airport" loading="lazy">
+<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=115.0,-8.9,115.4,-8.6&layer=mapnik&marker=-8.747,115.167" loading="lazy"></iframe>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- Packing Checklist -->
+<section id="packing">
+<div class="container">
+<h2 class="section-title">🎒 <span>Packing</span> Checklist</h2>
+<div class="grid-auto" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr))">
+
+<div class="glass check-card">
+<h3>🧥 Clothing</h3>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Down jacket</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Fleece</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Long pants ×2</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Shorts ×2</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>T-shirts ×4-5</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Swimwear ×2</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Underwear ×7-8</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Socks ×5</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Rain jacket</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Beanie</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Cap</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Buff</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Sandals</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Hiking shoes</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Flip-flops</div></div>
+</div>
+
+<div class="glass check-card">
+<h3>🎒 Gear</h3>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Daypack</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Dry bag</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Headlamp + batteries</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Power bank</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Adapter</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Charger</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Camera</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Sunglasses</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Dust mask ×2</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Microfiber towel</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Water bottle</div></div>
+</div>
+
+<div class="glass check-card">
+<h3>💊 Health</h3>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Personal meds</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Paracetamol</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Imodium</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Antihistamine</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Mosquito repellent</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Sunscreen SPF50</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Lip balm SPF</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Wet wipes</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Hand sanitizer</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Toiletries</div></div>
+</div>
+
+<div class="glass check-card">
+<h3>📄 Documents</h3>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Passport</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Flight confirmations</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Hotel bookings</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Travel insurance</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Credit cards</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>USD + IDR cash</div></div>
+<div onclick="toggleCheck(this)"><div class="check-item"><div class="check-box"></div>Indonesian SIM</div></div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Reminders -->
+<section id="reminders">
+<div class="container">
+<h2 class="section-title">⚡ <span>Reminders</span> & Tips</h2>
+
+<div class="reminder-card yellow">
+<h3>⚠️ Critical Reminders</h3>
+<ul>
+<li><span class="num">1.</span> Down jacket — Ijen+Bromo 5-10°C + wind</li>
+<li><span class="num">2.</span> Headlamp — Ijen midnight hike</li>
+<li><span class="num">3.</span> Buff/mask — Ijen sulfur + Bromo dust</li>
+<li><span class="num">4.</span> Hiking shoes — all hiking locations</li>
+<li><span class="num">5.</span> Passport — Java→Bali flight</li>
+<li><span class="num">6.</span> Dry bag — Tumpak Sewu + Madakaripura</li>
+</ul>
+</div>
+
+<div class="reminder-card red-border">
+<h3>🛑 Safety Reminders</h3>
+<ul>
+<li>Ijen: toxic sulfur gas, follow guide</li>
+<li>Bromo: no railing at crater edge</li>
+<li>Nusa Penida: deadly cliffs, no photo worth dying for</li>
+<li>Travel insurance with adventure sports cover</li>
+</ul>
+</div>
+
+<div class="reminder-card teal-border">
+<h3>💡 Tips</h3>
+<ul>
+<li>Ijen: breathe through cloth, gas mask available</li>
+<li>Bromo: book jeep through hotel</li>
+<li>Nusa Penida: book fast boat in advance (Eka Jaya/Maruti)</li>
+<li>Bali: Grab/Gojek everywhere</li>
+<li>Money: withdraw IDR at SUB airport</li>
+<li>SIM: Telkomsel at SUB airport</li>
+<li>May = dry season, minimal rain</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<footer>
+Made with <span>❤️</span> by Anya · Bromo-Bali Trip 2026
+</footer>
 
 <script>
-function toggle(el){const c=el.querySelector('.pack-check'),t=el.querySelector('.text');c.classList.toggle('checked');el.classList.toggle('struck')}
+function toggleCheck(el){
+  const item=el.querySelector('.check-item');
+  item.classList.toggle('struck');
+  const box=item.querySelector('.check-box');
+  box.textContent=item.classList.contains('struck')?'✓':'';
+}
+// Nav dots
+const dots=document.querySelectorAll('.nav-dots a');
+const sections=[...dots].map(a=>document.querySelector(a.getAttribute('href')));
+window.addEventListener('scroll',()=>{
+  let cur=0;
+  sections.forEach((s,i)=>{if(window.scrollY>=s.offsetTop-200)cur=i});
+  dots.forEach((d,i)=>d.classList.toggle('active',i===cur));
+});
 </script>
 </body>
 </html>
