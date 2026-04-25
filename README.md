@@ -6,7 +6,7 @@ Interactive travel planning pages — itinerary, packing list, weather info, and
 
 | Trip | Dates | Destinations | Status |
 |------|-------|-------------|--------|
-| [Bromo-Bali 2026](./index.html) | 01-09 May 2026 | East Java × Bali | 📝 Planned |
+| [Bromo-Bali 2026](./index.html) | 30 Apr-09 May 2026 | East Java × Bali | 📝 Planned |
 
 ## 🚀 Local Development
 
