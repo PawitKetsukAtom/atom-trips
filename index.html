@@ -70,6 +70,13 @@ section{padding:80px 0}
 .itin-right{display:flex;flex-direction:column;gap:16px}
 .itin-right img{width:100%;height:200px;object-fit:cover;border-radius:16px}
 .itin-right iframe{width:100%;height:200px;border:none;border-radius:16px}
+.sched-table{width:100%;font-size:13px;border-collapse:collapse;margin-top:8px}
+.sched-table th{text-align:left;padding:6px 8px;font-weight:600;color:#64748B;border-bottom:1px solid #E2E8F0;font-size:12px}
+.sched-table td{padding:6px 8px;border-bottom:1px solid #F1F5F9;color:#475569;vertical-align:top}
+.sched-table tr:last-child td{border-bottom:none}
+.sched-table .time{font-weight:600;color:#0F172A;white-space:nowrap;min-width:55px}
+.sched-table .gear{color:#14B8A6;font-style:italic;font-size:12px}
+.hotel-note{margin-top:8px;font-size:13px;color:#64748B;padding-top:8px;border-top:1px dashed #E2E8F0}
 
 /* Checklist */
 .check-card h3{font-size:16px;font-weight:700;margin-bottom:12px}
@@ -115,9 +122,9 @@ footer span{color:#DB2777}
 <div class="container">
 <div class="pill">✈️ Travel Planner</div>
 <h1>Bromo × Bali</h1>
-<p>East Java volcanoes & Bali island vibes — 10 calendar days / 9 activity days</p>
+<p>East Java volcanoes & Bali island vibes — 9 calendar days / 9 activity days</p>
 <div class="stats">
-<div class="stat"><div class="num">10</div><div class="label">Calendar Days</div></div>
+<div class="stat"><div class="num">9</div><div class="label">Calendar Days</div></div>
 <div class="stat"><div class="num">5</div><div class="label">Flight Legs</div></div>
 <div class="stat"><div class="num">5</div><div class="label">Hotels</div></div>
 <div class="stat"><div class="num">2</div><div class="label">Islands</div></div>
@@ -146,9 +153,9 @@ footer span{color:#DB2777}
 <div class="grid-3">
 <div class="glass flight-card">
 <div class="route">Bangkok → Surabaya</div>
-<div class="date">Apr 30 (Going)</div>
-<div class="flight-leg"><span class="code">AK 887</span><span>DMK → KUL</span><span class="time">16:45–20:05</span></div>
-<div class="flight-leg"><span class="code">QZ 327</span><span>KUL → SUB</span><span class="time">21:55–23:30</span></div>
+<div class="date">May 1 (Going)</div>
+<div class="flight-leg"><span class="code">AK 899</span><span>DMK → KUL</span><span class="time">11:40–14:55</span></div>
+<div class="flight-leg"><span class="code">QZ 325</span><span>KUL → SUB</span><span class="time">17:40–19:20</span></div>
 </div>
 <div class="glass flight-card">
 <div class="route">Surabaya → Bali</div>
@@ -168,29 +175,14 @@ footer span{color:#DB2777}
 <!-- Itinerary -->
 <section id="itin">
 <div class="container">
-<h2 class="section-title">📅 <span>10-Day</span> Itinerary</h2>
-
-<!-- Day 0 -->
-<div class="itin-day">
-<div class="glass itin-left">
-<h3>Day 0</h3><div class="date-label">Thu Apr 30 — Travel to Surabaya</div>
-<div class="schedule">
-16:45 DMK→KUL → 21:55 KUL→SUB → 23:30 Arrival SUB → car to hotel → late check-in → sleep
-</div>
-</div>
-<div class="itin-right">
-<img src="https://images.unsplash.com/photo-1573790387438-4da905039392?w=600&q=80" alt="Surabaya" loading="lazy">
-<iframe src="https://www.openstreetmap.org/export/embed.html?bbox=112.7,-7.3,112.8,-7.2&layer=mapnik&marker=-7.2575,112.7521" loading="lazy"></iframe>
-</div>
-</div>
+<h2 class="section-title">📅 <span>9-Day</span> Itinerary</h2>
 
 <!-- Day 1 -->
 <div class="itin-day">
 <div class="glass itin-left">
-<h3>Day 1</h3><div class="date-label">Fri May 1 — Surabaya Buffer & Prep</div>
-<div class="schedule">
-Late start → recover from travel → confirm Java tour pickup → buy SIM/snacks/water → early sleep for East Java route
-</div>
+<h3>Day 1</h3><div class="date-label">Fri 1 May — Arrival Surabaya</div>
+<table class="sched-table"><tr><td class="time">19:20</td><td>Land at Juanda Airport (SUB)</td><td class="gear">Comfortable travel clothes</td></tr><tr><td class="time">20:00</td><td>Exit + baggage claim</td><td class="gear">—</td></tr><tr><td class="time">20:30</td><td>Private car to hotel (~45 min)</td><td class="gear">—</td></tr><tr><td class="time">21:15</td><td>Check-in hotel (Surabaya)</td><td class="gear">—</td></tr><tr><td class="time">21:45</td><td>Late dinner near hotel</td><td class="gear">Casual</td></tr><tr><td class="time">22:30</td><td>Sleep early — big days ahead</td><td class="gear">—</td></tr></table>
+<div class="hotel-note">🏨 Surabaya city center</div>
 </div>
 <div class="itin-right">
 <img src="https://images.unsplash.com/photo-1573790387438-4da905039392?w=600&q=80" alt="Surabaya" loading="lazy">
@@ -201,10 +193,9 @@ Late start → recover from travel → confirm Java tour pickup → buy SIM/snac
 <!-- Day 2 -->
 <div class="itin-day">
 <div class="glass itin-left">
-<h3>Day 2</h3><div class="date-label">Sat May 2 — Jodipan & Malang</div>
-<div class="schedule">
-07:00 Wake → 09:00 Depart → 10:30 Jodipan → 12:00 Lunch Malang → 16:00 Tumpak Sewu hotel
-</div>
+<h3>Day 2</h3><div class="date-label">Sat 2 May — Surabaya → Malang → Tumpak Sewu</div>
+<table class="sched-table"><tr><td class="time">07:00</td><td>Wake up, hotel breakfast</td><td class="gear">Casual, comfortable</td></tr><tr><td class="time">08:00</td><td>Load luggage to car</td><td class="gear">—</td></tr><tr><td class="time">09:00</td><td>Depart hotel Surabaya</td><td class="gear">—</td></tr><tr><td class="time">10:30</td><td>Jodipan Colorful Village (Malang)</td><td class="gear">Bright clothes, hat, sunscreen</td></tr><tr><td class="time">12:00</td><td>Lunch in Malang city</td><td class="gear">—</td></tr><tr><td class="time">13:30</td><td>Depart for Tumpak Sewu</td><td class="gear">—</td></tr><tr><td class="time">16:00</td><td>Check-in Tumpak Sewu Hotel</td><td class="gear">—</td></tr><tr><td class="time">16:30</td><td>Rest / explore nearby</td><td class="gear">Sandals, easy clothes</td></tr><tr><td class="time">18:00</td><td>Dinner at hotel / local warung</td><td class="gear">—</td></tr><tr><td class="time">19:30</td><td>Early sleep — tomorrow hike early</td><td class="gear">Set alarm 05:30</td></tr></table>
+<div class="hotel-note">🏨 Tumpak Sewu Hotel</div>
 </div>
 <div class="itin-right">
 <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?w=600&q=80" alt="Jodipan Colorful Village" loading="lazy">
@@ -215,11 +206,10 @@ Late start → recover from travel → confirm Java tour pickup → buy SIM/snac
 <!-- Day 3 -->
 <div class="itin-day">
 <div class="glass itin-left">
-<h3>Day 3</h3><div class="date-label">Sun May 3 — Tumpak Sewu</div>
 <div class="day-badge warn">⚠️ นอนเร็ว</div>
-<div class="schedule">
-06:30 Viewpoint → 07:00 Hike down waterfall → 08:30 Back → 11:00 Depart → 17:00 Ijen hotel
-</div>
+<h3>Day 3</h3><div class="date-label">Sun 3 May — Tumpak Sewu Waterfall → Bondowoso</div>
+<table class="sched-table"><tr><td class="time">05:30</td><td>Wake up</td><td class="gear">—</td></tr><tr><td class="time">06:00</td><td>Hotel breakfast</td><td class="gear">—</td></tr><tr><td class="time">06:30</td><td>Walk to Panoramic Viewpoint (500m)</td><td class="gear">Hiking shoes (must), quick-dry shirt, hat</td></tr><tr><td class="time">06:40</td><td>Panorama viewpoint photos</td><td class="gear">Camera/phone, small bag</td></tr><tr><td class="time">07:00</td><td>Hike down to waterfall (1.5km)</td><td class="gear">Swimwear underneath, towel, waterproof bag</td></tr><tr><td class="time">07:30</td><td>At waterfall — enjoy, swim, photos</td><td class="gear">GoPro/waterproof cam</td></tr><tr><td class="time">08:30</td><td>Hike back up</td><td class="gear">Dry shirt to change</td></tr><tr><td class="time">09:30</td><td>Back at hotel — shower, pack</td><td class="gear">—</td></tr><tr><td class="time">10:30</td><td>Check-out</td><td class="gear">—</td></tr><tr><td class="time">11:00</td><td>Depart for Bondowoso (long drive ~5-6h)</td><td class="gear">Car snacks, neck pillow</td></tr><tr><td class="time">13:00</td><td>Lunch en route</td><td class="gear">—</td></tr><tr><td class="time">17:00</td><td>Check-in Ijen Hotel</td><td class="gear">—</td></tr><tr><td class="time">18:00</td><td>Dinner, rest</td><td class="gear">Casual</td></tr><tr><td class="time">19:00</td><td><strong>CRITICAL: Sleep early</strong> — midnight wake-up</td><td class="gear">Set 3 alarms: 23:00, 23:15, 23:30</td></tr></table>
+<div class="hotel-note">🏨 Ijen Hotel (Bondowoso area)</div>
 </div>
 <div class="itin-right">
 <img src="https://images.unsplash.com/photo-1504893524553-b855bce32c67?w=600&q=80" alt="Tumpak Sewu Waterfall" loading="lazy">
@@ -230,11 +220,10 @@ Late start → recover from travel → confirm Java tour pickup → buy SIM/snac
 <!-- Day 4 -->
 <div class="itin-day">
 <div class="glass itin-left">
-<h3>Day 4</h3><div class="date-label">Mon May 4 — Ijen Crater</div>
 <div class="day-badge hot">🔥 หนักสุด</div>
-<div class="schedule">
-23:30 Wake → 00:00 Drive → 02:00 Hike Ijen → 04:00 Blue Fire → 05:00 Sunrise → 08:00 Return → 17:00 Bromo hotel
-</div>
+<h3>Day 4</h3><div class="date-label">Mon 4 May — Ijen Blue Fire → Bromo</div>
+<table class="sched-table"><tr><td class="time">23:30</td><td>Wake up (previous night)</td><td class="gear">—</td></tr><tr><td class="time">00:00</td><td>Depart hotel to Paltuding (2h drive)</td><td class="gear">WARM LAYERS</td></tr><tr><td class="time">02:00</td><td>Arrive Paltuding, start hike (4km)</td><td class="gear">Headlamp, hiking shoes, warm jacket</td></tr><tr><td class="time">04:00</td><td><strong>Blue Fire viewpoint</strong></td><td class="gear">Gas mask, gloves</td></tr><tr><td class="time">05:00</td><td>Sunrise over Ijen crater lake</td><td class="gear">Camera</td></tr><tr><td class="time">07:00</td><td>Hike back down to parking</td><td class="gear">Trekking pole</td></tr><tr><td class="time">08:00</td><td>Drive back to hotel</td><td class="gear">—</td></tr><tr><td class="time">10:00</td><td>Hotel breakfast + shower + nap</td><td class="gear">—</td></tr><tr><td class="time">12:00</td><td>Check-out Ijen Hotel</td><td class="gear">—</td></tr><tr><td class="time">12:30</td><td>Depart for Bromo (~4-5h drive)</td><td class="gear">Car snacks</td></tr><tr><td class="time">13:30</td><td>Lunch en route</td><td class="gear">—</td></tr><tr><td class="time">17:00</td><td>Check-in Bromo Hotel</td><td class="gear">—</td></tr><tr><td class="time">18:00</td><td>Early dinner, rest</td><td class="gear">Casual</td></tr><tr><td class="time">19:30</td><td>Sleep early — another midnight start</td><td class="gear">Set alarms: 01:00, 01:15, 01:30</td></tr></table>
+<div class="hotel-note">🏨 Bromo area (Cemoro Lawang)</div>
 </div>
 <div class="itin-right">
 <img src="https://images.unsplash.com/photo-1552733407-5d5c46c3bb3b?w=600&q=80" alt="Ijen Crater Blue Fire" loading="lazy">
@@ -245,10 +234,9 @@ Late start → recover from travel → confirm Java tour pickup → buy SIM/snac
 <!-- Day 5 -->
 <div class="itin-day">
 <div class="glass itin-left">
-<h3>Day 5</h3><div class="date-label">Tue May 5 — Bromo & Madakaripura</div>
-<div class="schedule">
-01:30 Wake → 02:00 Jeep → 05:00 Bromo sunrise → 08:30 Crater → 12:00 Madakaripura → 18:00 Surabaya
-</div>
+<h3>Day 5</h3><div class="date-label">Tue 5 May — Bromo Sunrise → Madakaripura → Surabaya</div>
+<table class="sched-table"><tr><td class="time">01:30</td><td>Wake up</td><td class="gear">—</td></tr><tr><td class="time">02:00</td><td>Jeep to King Kong Hill</td><td class="gear">Warm layers, beanie, gloves</td></tr><tr><td class="time">04:00</td><td>Wait at viewpoint (cold!)</td><td class="gear">Hot drink if available</td></tr><tr><td class="time">05:00</td><td><strong>Bromo Sunrise</strong> 🌄</td><td class="gear">Camera, wide lens</td></tr><tr><td class="time">06:00</td><td>Jeep to Widodaren Hill</td><td class="gear">—</td></tr><tr><td class="time">07:00</td><td>Explore Widodaren</td><td class="gear">Comfortable hiking shoes</td></tr><tr><td class="time">07:30</td><td>Jeep to Bromo crater parking</td><td class="gear">—</td></tr><tr><td class="time">08:00</td><td>Walk/horse to Bromo crater rim</td><td class="gear">Dust mask, sunglasses</td></tr><tr><td class="time">08:30</td><td>At crater rim — photos</td><td class="gear">Careful of edge</td></tr><tr><td class="time">09:00</td><td>Return to jeep, back to hotel</td><td class="gear">—</td></tr><tr><td class="time">10:00</td><td>Hotel breakfast</td><td class="gear">—</td></tr><tr><td class="time">11:30</td><td>Check-out</td><td class="gear">Pack everything</td></tr><tr><td class="time">12:00</td><td>Depart for Madakaripura Waterfall</td><td class="gear">Swimwear underneath, water shoes</td></tr><tr><td class="time">12:30</td><td>Motorbike taxi to waterfall entrance</td><td class="gear">Small cash</td></tr><tr><td class="time">12:45</td><td>Walk into waterfall</td><td class="gear">Waterproof bag, towel</td></tr><tr><td class="time">13:00</td><td>Explore Madakaripura</td><td class="gear">Rain jacket/poncho</td></tr><tr><td class="time">14:00</td><td>Return to parking</td><td class="gear">Dry clothes to change</td></tr><tr><td class="time">15:00</td><td>Depart for Surabaya (~3h)</td><td class="gear">—</td></tr><tr><td class="time">16:00</td><td>Dinner stop en route</td><td class="gear">—</td></tr><tr><td class="time">18:00</td><td>Arrive Surabaya hotel</td><td class="gear">—</td></tr><tr><td class="time">19:00</td><td>Shower, rest, early sleep</td><td class="gear">Casual</td></tr></table>
+<div class="hotel-note">🏨 Surabaya (near airport)</div>
 </div>
 <div class="itin-right">
 <img src="https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=600&q=80" alt="Mount Bromo Sunrise" loading="lazy">
@@ -259,10 +247,9 @@ Late start → recover from travel → confirm Java tour pickup → buy SIM/snac
 <!-- Day 6 -->
 <div class="itin-day">
 <div class="glass itin-left">
-<h3>Day 6</h3><div class="date-label">Wed May 6 — Canggu, Bali</div>
-<div class="schedule">
-07:00 Relax → 14:00 Fly SUB→DPS → 17:30 Canggu hotel → 18:00 Sunset → 19:00 Beach club
-</div>
+<h3>Day 6</h3><div class="date-label">Wed 6 May — Surabaya → Bali</div>
+<table class="sched-table"><tr><td class="time">07:00</td><td>Wake up, relaxed breakfast</td><td class="gear">Casual</td></tr><tr><td class="time">09:00</td><td>Final packing, check hotel</td><td class="gear">—</td></tr><tr><td class="time">10:00</td><td>Depart for Juanda Airport</td><td class="gear">—</td></tr><tr><td class="time">11:00</td><td>Arrive SUB airport</td><td class="gear">—</td></tr><tr><td class="time">12:00</td><td>Check-in, lunch at airport</td><td class="gear">Comfortable travel clothes</td></tr><tr><td class="time">14:00</td><td><strong>IU 706</strong> — Fly SUB → DPS</td><td class="gear">—</td></tr><tr><td class="time">16:00</td><td>Land Denpasar (DPS)</td><td class="gear">—</td></tr><tr><td class="time">17:00</td><td>Car to Kuta Utara hotel (~30 min)</td><td class="gear">—</td></tr><tr><td class="time">17:30</td><td>Check-in hotel (Canggu area)</td><td class="gear">—</td></tr><tr><td class="time">18:00</td><td>Sunset at Canggu/Seminyak beach</td><td class="gear">Beachwear, sandals</td></tr><tr><td class="time">19:00</td><td>Beach club: Potato Head or FINNS</td><td class="gear">Nice casual</td></tr><tr><td class="time">21:00</td><td>Dinner + walk around</td><td class="gear">—</td></tr><tr><td class="time">22:30</td><td>Sleep</td><td class="gear">—</td></tr></table>
+<div class="hotel-note">🏨 Kuta Utara / Canggu area</div>
 </div>
 <div class="itin-right">
 <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Canggu Beach Bali" loading="lazy">
@@ -273,10 +260,9 @@ Late start → recover from travel → confirm Java tour pickup → buy SIM/snac
 <!-- Day 7 -->
 <div class="itin-day">
 <div class="glass itin-left">
-<h3>Day 7</h3><div class="date-label">Thu May 7 — Ubud</div>
-<div class="schedule">
-07:00 Depart → 08:30 Tegallalang → 10:00 Tegenungan → 12:00 Lunch → 18:00 Spa
-</div>
+<h3>Day 7</h3><div class="date-label">Thu 7 May — Ubud Day Trip</div>
+<table class="sched-table"><tr><td class="time">06:30</td><td>Wake up</td><td class="gear">—</td></tr><tr><td class="time">07:00</td><td>Depart Kuta Utara for Ubud</td><td class="gear">Comfortable, casual</td></tr><tr><td class="time">08:30</td><td>Tegallalang Rice Terrace</td><td class="gear">Walking shoes, hat, sunscreen, camera</td></tr><tr><td class="time">10:00</td><td>Tegenungan Waterfall</td><td class="gear">Swimwear, towel, sandals</td></tr><tr><td class="time">12:00</td><td>Lunch in Ubud</td><td class="gear">—</td></tr><tr><td class="time">13:30</td><td>Jungle/rice field cafe</td><td class="gear">Nice casual for photos</td></tr><tr><td class="time">15:00</td><td>Drive back to Canggu</td><td class="gear">—</td></tr><tr><td class="time">16:30</td><td>Back at hotel — rest</td><td class="gear">—</td></tr><tr><td class="time">18:00</td><td>Massage/spa in Canggu</td><td class="gear">Change clothes</td></tr><tr><td class="time">19:30</td><td>Dinner in Canggu/Seminyak</td><td class="gear">Smart casual</td></tr><tr><td class="time">21:00</td><td>Walk around, drinks</td><td class="gear">—</td></tr></table>
+<div class="hotel-note">🏨 Kuta Utara / Canggu (same)</div>
 </div>
 <div class="itin-right">
 <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=80" alt="Tegallalang Rice Terrace Ubud" loading="lazy">
@@ -287,10 +273,9 @@ Late start → recover from travel → confirm Java tour pickup → buy SIM/snac
 <!-- Day 8 -->
 <div class="itin-day">
 <div class="glass itin-left">
-<h3>Day 8</h3><div class="date-label">Fri May 8 — Nusa Penida</div>
-<div class="schedule">
-05:30 Depart → 07:30 Boat → 09:30 Xpark bungee → 13:00 Kelingking → 16:00 Boat back
-</div>
+<h3>Day 8</h3><div class="date-label">Fri 8 May — Nusa Penida + Xpark Bali</div>
+<table class="sched-table"><tr><td class="time">05:00</td><td>Wake up</td><td class="gear">—</td></tr><tr><td class="time">05:30</td><td>Depart for Sanur Harbour</td><td class="gear">—</td></tr><tr><td class="time">06:30</td><td>Arrive harbour, check-in</td><td class="gear">ID, booking confirmation</td></tr><tr><td class="time">07:30</td><td>Fast boat to Nusa Penida (30-45 min)</td><td class="gear">Sunscreen, hat, seasick pills</td></tr><tr><td class="time">08:30</td><td>Arrive Nusa Penida, car pickup</td><td class="gear">—</td></tr><tr><td class="time">09:30</td><td>Extreme Park Bali (Xpark)</td><td class="gear">Closed shoes, sporty clothes</td></tr><tr><td class="time">10:00-12:00</td><td>Bungee jump, swing, cliff activities</td><td class="gear">GoPro, courage</td></tr><tr><td class="time">12:00</td><td>Lunch on Nusa Penida</td><td class="gear">—</td></tr><tr><td class="time">13:00</td><td>Kelingking / Broken Beach / Angels Billabong</td><td class="gear">Hiking shoes, swimwear, lots of water</td></tr><tr><td class="time">15:30</td><td>Return to harbour</td><td class="gear">—</td></tr><tr><td class="time">16:00</td><td>Fast boat back to Sanur</td><td class="gear">—</td></tr><tr><td class="time">17:30</td><td>Arrive Sanur, car back to hotel</td><td class="gear">—</td></tr><tr><td class="time">19:00</td><td>Dinner, rest</td><td class="gear">Casual</td></tr><tr><td class="time">21:00</td><td>Pack for departure tomorrow</td><td class="gear">—</td></tr></table>
+<div class="hotel-note">🏨 Kuta Utara / Canggu (same)</div>
 </div>
 <div class="itin-right">
 <img src="https://images.unsplash.com/photo-1568849676085-51415703900f?w=600&q=80" alt="Kelingking Beach Nusa Penida" loading="lazy">
@@ -301,10 +286,8 @@ Late start → recover from travel → confirm Java tour pickup → buy SIM/snac
 <!-- Day 9 -->
 <div class="itin-day">
 <div class="glass itin-left">
-<h3>Day 9</h3><div class="date-label">Sat May 9 — Departure</div>
-<div class="schedule">
-07:00 Brunch → 08:30 Airport → 11:40 Fly → 14:45 KUL → 17:00 Fly → 18:10 BKK
-</div>
+<h3>Day 9</h3><div class="date-label">Sat 9 May — Departure</div>
+<table class="sched-table"><tr><td class="time">06:30</td><td>Wake up</td><td class="gear">—</td></tr><tr><td class="time">07:00</td><td>Coffee / brunch near hotel</td><td class="gear">Comfortable</td></tr><tr><td class="time">08:00</td><td>Check-out, car to airport</td><td class="gear">—</td></tr><tr><td class="time">08:30</td><td>Depart for Ngurah Rai Airport (DPS)</td><td class="gear">—</td></tr><tr><td class="time">09:30</td><td>Arrive DPS</td><td class="gear">—</td></tr><tr><td class="time">10:00</td><td>Check-in, immigration</td><td class="gear">Passport, boarding pass</td></tr><tr><td class="time">11:40</td><td><strong>AK 371</strong> — Fly DPS → KUL</td><td class="gear">—</td></tr><tr><td class="time">14:45</td><td>Arrive KLIA2</td><td class="gear">—</td></tr><tr><td class="time">15:00-16:30</td><td>Layover — walk around, light snack</td><td class="gear">—</td></tr><tr><td class="time">17:00</td><td><strong>AK 892</strong> — Fly KUL → DMK</td><td class="gear">—</td></tr><tr><td class="time">18:10</td><td>Arrive Bangkok 🏠</td><td class="gear">—</td></tr></table>
 </div>
 <div class="itin-right">
 <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80" alt="Bali Airport" loading="lazy">
